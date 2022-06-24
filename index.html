@@ -3,7 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.85, maximum-scale=0.85, user-scalable=no," />
+    <meta name="viewport" content="width=device-width, initial-scale=0.95, maximum-scale=0.95, user-scalable=no," />
+
+
+    <meta name="theme-color" content="#000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <meta name="msapplication-navbutton-color" content="#000" />
 
     <title>Minaya - DESIGNER</title>
     <meta name="description"
@@ -15,7 +20,8 @@
     <meta property="og:image" content="img/minaya.gif" />
 
     <meta name="twitter:title" content="Ricardo Minaya - Designer Multimídia / Currículo e Portifólio">
-    <meta name="twitter:description" content="UI, UX, Designer Gráfico, Ilustrador, Designer Instrucional e Artista Plástico">
+    <meta name="twitter:description"
+        content="UI, UX, Designer Gráfico, Ilustrador, Designer Instrucional e Artista Plástico">
     <meta name="twitter:image" content=" img/minaya.gif">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -91,8 +97,6 @@
             <div class="swiper-button-next text-white px-4"></div>
             <div class="swiper-button-prev text-white px-4"></div>
 
-            <!-- <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-bullets-dynamic">
-                </div> -->
         </div>
 
 
@@ -877,6 +881,7 @@
     <script src="lightbox/simple-lightbox.js"></script>
 
     <script>
+
         var swiper = new Swiper(".swiper", {
             slidesPerView: 'auto',
             spaceBetween: 1,
@@ -885,14 +890,12 @@
                 prevEl: ".swiper-button-prev",
                 clickable: false,
             },
-            pagination: {
-                el: ".swiper-pagination",
-                dynamicBullets: true,
-            },
             loop: false,
-            speed: 1000 // tempo de duração de transição entre um slide e outro
-
+            speed: 1000
         });
+
+
+
 
         (function () {
             var $gallery = new SimpleLightbox('.gallery a', {});
