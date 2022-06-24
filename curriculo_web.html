@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Ricardo P. Minaya</title>
+    <link rel="icon" type="imagem/png" href="https://janjovisk.github.io/Portfolio/images/avatar.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1024px;
+            min-height: 1000px;
+            background: #fff;
+            margin: 50px;
+            display: grid;
+            grid-template-columns: 340px 2fr;
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0.2);
+        }
+
+        .container .left_side {
+            position: relative;
+            padding: 40px;
+            background: #003147;
+        }
+
+        .profileText {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profileText .imgBx {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profileText .imgBx img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        .profileText h2 {
+            color: #fff;
+            font-size: 1.5em;
+            line-height: 1.4em;
+            margin-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .profileText h2 span {
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+
+        .contactInfo {
+            padding-top: 40px;
+        }
+
+        .contactInfo .title {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .contactInfo ul {
+            position: relative;
+        }
+
+        .contactInfo ul li {
+            position: relative;
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .contactInfo ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contactInfo ul li .icon {
+            width: 30px;
+            font-size: 18px;
+            margin: 0 10px 0 0;
+            color: #03a9f4;
+        }
+
+        .contactInfo ul li span {
+            display: inline;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .contactInfo.education li {
+            margin-bottom: 15px;
+        }
+
+        .contactInfo.education li h5 {
+            color: #03a9f4;
+            font-weight: 300;
+        }
+
+        .contactInfo.education li h4 {
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .contactInfo.education li h4:nth-child(2) {
+            font-weight: 500;
+        }
+
+        .contactInfo.conhecimento .percent {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: #081921;
+            display: block;
+            margin-top: 5px;
+
+        }
+
+        .contactInfo.conhecimento .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #03a9f4;
+
+        }
+
+
+
+
+
+        .container .right_side {
+            position: relative;
+            padding: 40px;
+            background: #fff;
+        }
+
+        .about {
+            margin-bottom: 50px;
+        }
+
+        .about:last-child {
+            margin-bottom: 0;
+        }
+
+        .title2 {
+            color: #003147;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .about .box {
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+
+        .about .box a {
+            color: #03a9f4;
+        }
+
+        .about .box .year_company {
+            min-width: 160px;
+        }
+
+        .about .box .year_company h5 {
+            text-transform: uppercase;
+            color: #948c90;
+            font-weight: 600;
+        }
+
+        .about .box .text h4 {
+            margin-top: -2px;
+            text-transform: uppercase;
+            color: #2a7da2;
+            font-size: 16px;
+        }
+
+        .about .box .text h5 {
+            margin-bottom: 10px;
+        }
+
+        .skills .box {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skills .box h4 {
+            text-transform: uppercase;
+            color: #948c90;
+            font-weight: 500;
+        }
+
+        .skills .box .percent {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background: #f0f0f0;
+        }
+
+        .skills .box .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #03a9f4;
+        }
+
+        .interest ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .interest ul li {
+            list-style: none;
+            color: #333;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+
+        .interest ul li .fa {
+            position: absolute;
+            margin: 5px 0;
+            color: #03a9f4;
+            font-size: 18px;
+        }
+
+        .interest ul li span {
+            margin-left: 24px;
+            font-size: 0.8em;
+            line-height: 1em;
+        }
+
+
+        /* -------------Responsivo ------- */
+
+        @media(max-width:1024px) {
+            .container {
+                margin: 10px;
+            }
+        }
+
+
+        @media(min-width:768px) and (max-width:991px) {
+
+            .skills .box {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .interest ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media(max-width:991px) {
+
+            .about .box {
+                flex-direction: column;
+            }
+
+            .about .box .year_company {
+                margin-bottom: 10px;
+            }
+
+            .year_company h5 {
+                display: inline;
+                margin-right: 16px;
+            }
+        }
+
+        @media(max-width:860px) {
+            .interest ul {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .interest ul li span {
+                margin-left: 30px;
+                font-size: 1em;
+            }
+        }
+
+        @media(max-width:768px) {
+            .container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .interest ul {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:575px) {
+
+            .interest ul,
+            .skills .box {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .interest ul li span {
+                margin-left: 30px;
+                font-size: 1em;
+            }
+        }
+
+
+        /* -------------- Impressão ------- */
+        @media print {
+            .container {
+                margin: 0;
+                display: grid;
+                grid-template-columns: 300px 2fr;
+            }
+
+            .left_side,
+            .right_side {
+                font-size: 0.7em !important;
+            }
+
+            .left_side {
+                background-color: #f1f1f1 !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .profileText h2 {
+                font-size: 1.4em;
+                margin-left: 60px;
+                overflow: hidden;
+                text-align: left;
+            }
+
+            .profileText .imgBx {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                left: 0;
+                top: 16px;
+                filter: grayscale(1);
+            }
+
+            .contactInfo.conhecimento .percent {
+                background: #c5c5c5;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .contactInfo.conhecimento .percent div {
+                background: #333;
+                -webkit-print-color-adjust: exact;
+
+            }
+
+            .contactInfo {
+                padding-top: 20px;
+            }
+
+            .about {
+                margin-bottom: 30px;
+            }
+
+            .skills .box {
+                margin: 0 auto;
+                padding: 0 auto;
+            }
+
+            .skills .box .percent {
+                background: #c5c5c5;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .skills .box .percent div {
+                background: #333;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .interest,
+            .btn_functions {
+                display: none !important;
+
+            }
+
+            * {
+                color: #000000 !important;
+            }
+        }
+
+        @page {
+            margin: 0.05cm;
+        }
+
+
+        /* Botões de Interação */
+
+        .btn_functions {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+
+            top: 16px;
+            right: 16px;
+            overflow: hidden;
+            height: 100px;
+
+
+        }
+
+        .btn_functions a {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            margin: 6px;
+
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 50%;
+            background: #003147;
+            border: 2px solid #fff;
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+            color: #fff;
+
+            width: 58px;
+            height: 58px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn_functions a i {
+            align-self: center;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn_functions a:hover {
+            background: #fff;
+            border: 2px solid #003147;
+            transform: scale(0.96);
+            box-shadow: 0px 0px 0px;
+            transform: scale(0.95);
+        }
+
+        .btn_functions a:hover i {
+            color: #003147;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left_side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img src="https://janjovisk.github.io/Portfolio/imagens/avatar.png" alt="Avatar">
+                </div>
+                <h2>Ricardo P. Minaya <br> <span>Web Designer (UI/UX)</span></h2>
+            </div>
+
+            <div class="contactInfo">
+                <h3 class="title">Contatos</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="text">+55 11 95595-1981</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <span class="text"><a href="mailto:Janjovisk@gmail.com">Janjovisk@gmail.com</a></span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
+                        <span class="text">
+                            <a href="https://janjovisk.github.io/Portfolio/historico.html" target="_blank">
+                                Janjovisk.github.io/Portfolio
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                        <span class="text">
+                            <a href="https://www.linkedin.com/in/ricardo-pedrosa-minaya-08934b3a" target="_blank">
+                                Perfil LinkedIn
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="text">
+                            <a href="https://www.google.com.br/maps/place/Rua+Hermann+Teles+Ribeiro,+386+-+Vila+Invernada,+S%C3%A3o+Paulo+-+SP,+03348-010/@-23.5610951,-46.569463,15z/data=!4m13!1m7!3m6!1s0x94cef7f936820ea5:0xa7a222ee9c2553da!2sJardim+Analia+Franco,+S%C3%A3o+Paulo+-+SP!3b1!8m2!3d-23.5579684!4d-46.561824!3m4!1s0x94ce5c2f258f5433:0x7b78def871e04d74!8m2!3d-23.5667161!4d-46.5624163"
+                                target="_blank">
+                                Vila Invernada / SP
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contactInfo education">
+                <h3 class="title">Escolaridade</h3>
+                <ul>
+                    <li>
+                        <h5>2017 e 2019 (12hs.)</h5>
+                        <h4>Curso Téc. UX e UI</h4>
+                        <h4>MERGO - SP</h4>
+                    </li>
+                    <li>
+                        <h5>02/2014 - 07/2015 (3 Semest.)</h5>
+                        <h4>PÓS - Designer Instrucional</h4>
+                        <h4>SENAC - SP</h4>
+                    </li>
+
+                    <li>
+                        <h5>01/2008 - 12/2009 (4 Semest.)</h5>
+                        <h4>TECNÓLOGO - Análise e Desenv. de Sistemas</h4>
+                        <h4>UnicSul - Anália Franco</h4>
+                    </li>
+                    <li>
+                        <h5>08/2011 - 07/2013 (4 Semest.)</h5>
+                        <h4>Téc. Design Digital - Kit Adobe + Autodesk Maya 2013 </h4>
+                        <h4>ESCOLA SAGA</h4>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contactInfo conhecimento">
+                <h3 class="title">Conhecimento</h3>
+                <ul>
+                    <li>
+                        <span class="text">Inglês/ Nível Técnico</span>
+                        <span class="percent">
+                            <div style="width: 30%;"></div>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="text">Desenv. Systems Interface</span>
+                        <span class="percent">
+                            <div style="width: 90%;"></div>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="text">Desenv. Web Sites</span>
+                        <span class="percent">
+                            <div style="width: 65%;"></div>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="text">Ilustrações</span>
+                        <span class="percent">
+                            <div style="width: 90%;"></div>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="text">Análise de Requisitos</span>
+                        <span class="percent">
+                            <div style="width: 70%;"></div>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="text">StoryBoards/ Prototipagem</span>
+                        <span class="percent">
+                            <div style="width: 85%;"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="right_side">
+            <div class="about">
+                <h2 class="title2">Resumo</h2>
+                <p>
+                    Fui técnico de informática por muitos anos antes de iniciar
+                    minha carreira como webdesigner em 2011, mas tive meu primeiro
+                    contato com programação em 1997 - <i>Ensino médio em Processamento de Dados</i>.
+                </p>
+                <br>
+                <p>
+                    Me formei em Análise e Desenv. de Sistema e Pós Graduação em Design Instrucional.
+                    Isso me proporcionou uma ótima visão técnica e psicológica focado na criação de soluções digitais,
+                    dando total importância no processo de aprendizagem e intuitividade que os usuários possuem
+                    durante a utilização dos aplicativos.
+                </p>
+                <br>
+                <p>
+                    Além disso, sou desenhista/ ilustrador desde a adolescência, podendo assim participar
+                    na produção de Logos, mascotes e manuais de marca.
+                </p>
+            </div>
+
+            <div class="about">
+                <h2 class="title2">Experiências</h2>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>01/2021 - Presente</h5>
+                        <h5>Best Projects</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Web Designer PL.</h4>
+                        <h5>Prestador de Serviço: PRODESP / SDR.SP</h5>
+                        <p>
+                            Criação e suporte à melhorias nos sistemas web de gestão interna
+                            e portais institucionais.
+                            Apresentação de propostas e Desenvolvimento Front-End.
+                            Uso efetivo de Adobe XD, Visual Studio, Pacote Adobe, GIT e Trello.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="year_company">
+                        <h5>05/2019 - 11/2019</h5>
+                        <h5>BRQ - Solutions</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Web Designer PL.</h4>
+                        <h5>Prestador de Serviço: PRODESP</h5>
+                        <p>
+                            Projeto de renovação e manutenção do novo Portal Poupatempo (Design e
+                            Front-end). <a href="https://www.poupatempo.sp.gov.br/" target="_blank">
+                                www.poupatempo.sp.gov.br
+                            </a> <br>
+                            Uso efetivo de Visual Studio Code, Trello, GITLab/ GITKraken.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="year_company">
+                        <h5>08/2012 - 05/2019</h5>
+                        <h5>Atento Brasil S/a</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Web Designer PL.</h4>
+                        <p>Criação de layouts de Sistemas Web, customização
+                            de Masterpages de portais Sharepoint 2013, campanhas
+                            de e-mail de endomarketing, criação de objetos
+                            gráficos e composições para apresentações em PPT.
+                            Uso efetivo do Kit Adobe.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="about skills">
+                <h2 class="title2">Competências Profissionais</h2>
+                <div class="box">
+                    <h4>Html/ bootstrap</h4>
+                    <div class="percent">
+                        <div style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="percent">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Javascript/ Jquery</h4>
+                    <div class="percent">
+                        <div style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Photoshop</h4>
+                    <div class="percent">
+                        <div style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Illustrator</h4>
+                    <div class="percent">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Adobe XD</h4>
+                    <div class="percent">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Premiere</h4>
+                    <div class="percent">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Ms Sharepoint</h4>
+                    <div class="percent">
+                        <div style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>WordPress</h4>
+                    <div class="percent">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about interest">
+                <h2 class="title2">Interesses</h2>
+                <ul>
+                    <li><i class="fa fa-cutlery" aria-hidden="true"></i> <span>Cozinhar</span></li>
+                    <li><i class="fa fa-picture-o" aria-hidden="true"></i> <span>Desenhar</span></li>
+                    <li><i class="fa fa-scissors" aria-hidden="true"></i> <span>Artes Plásticas</span></li>
+                    <li><i class="fa fa-book" aria-hidden="true"></i> <span>Leitura</span></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="btn_functions">
+        <a href="javascript:if(window.print)window.print()" alt="Imprimir"><i class="fa fa-print fa-2x"
+                aria-hidden="true"></i></a>
+        <a href="javascript:window.open('','_self').close();" alt="Fechar"><i class="fa fa-times fa-2x"
+                aria-hidden="true"></i></a>
+    </div>
+</body>
+
+</html>
