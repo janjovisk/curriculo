@@ -579,6 +579,10 @@ input[name="xp"]:checked~label:hover{
   background-size: auto 100%;
 }
 
+.tit-alt{
+  display: none;
+}
+
 @media (max-width: 991px) {
 
   .avatar {
@@ -641,4 +645,13 @@ input[name="xp"]:checked~label:hover{
     transform: scale(0.9);
     margin-top: -25px !important;
   }
+
+  .tit-norm{
+    display: none;
+  }
+
+  .tit-alt{
+    display: block;
+  }
 }
+
